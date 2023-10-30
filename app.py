@@ -101,22 +101,22 @@ class App(tk.Tk):
         # Graph areas
         self.graph1 = GraphFrame(self.left_frame)
         self.graph1.set_title("Графики референтных измерений")
-        self.graph1.set_axis(xl = "Время,с", yl="Напряжение,В")
+        self.graph1.set_axis(xl = "Отсчеты", yl="Напряжение,В")
         self.graph1.grid(row=0, column=0)
 
         self.graph1_2 = GraphFrame(self.left_frame)
         self.graph1_2.set_title("Графики объектных измерений")
-        self.graph1_2.set_axis(xl="Частота,Гц", yl="Амплитуда,В")
+        self.graph1_2.set_axis(xl="Отсчеты", yl="Амплитуда,В")
         self.graph1_2.grid(row=0, column=3)
 
         self.graph2 = GraphFrame(self.left_frame)
         self.graph2.set_title("График спектра")
-        self.graph2.set_axis(xl="Время,с", yl="Напряжение,В")
+        self.graph2.set_axis(xl="Отсчеты", yl="Напряжение,В")
         self.graph2.grid(row=2, column=0)
 
         self.graph3 = GraphFrame(self.left_frame)
         self.graph3.set_title("График разности фаз")
-        self.graph3.set_axis(xl="Время,с", yl="Фаза,град.")
+        self.graph3.set_axis(xl="Отсчеты", yl="Фаза,град.")
         self.graph3.grid(row=2, column=3)
 
         # Right part of the window
@@ -179,15 +179,15 @@ class App(tk.Tk):
         self.info_section = ttk.Frame(self.right_frame, padding=(7, 7))
         self.info_section.grid(row=5, column=0, rowspan=3, columnspan = 2, pady=(7, 7))
 
-        self.info_label1 = ttk.Label(self.info_section, text="Угол опорного сигнала: ", font=("TkDefaultFont", 11))
+        self.info_label1 = ttk.Label(self.info_section, text="Разность фаз референтных измерений: ", font=("TkDefaultFont", 11))
         self.info_label1.grid(row=0, column=0, padx=(7, 7), pady=(7, 7))
         self.info_value1 = ttk.Label(self.info_section, text="", font=("TkDefaultFont", 11))
 
-        self.info_label2 = ttk.Label(self.info_section, text="Угол объектного сигнала: ", font=("TkDefaultFont", 11))
+        self.info_label2 = ttk.Label(self.info_section, text="Разность фаз объектных измерений: ", font=("TkDefaultFont", 11))
         self.info_label2.grid(row=1, column=0, padx=(7, 7), pady=(7, 7))
         self.info_value2 = ttk.Label(self.info_section, text="", font=("TkDefaultFont", 11))
 
-        self.info_label3 = ttk.Label(self.info_section, text="Разность фаз: ", font=("TkDefaultFont", 11))
+        self.info_label3 = ttk.Label(self.info_section, text="УВПП: ", font=("TkDefaultFont", 11))
         self.info_label3.grid(row=2, column=0, padx=(7, 7), pady=(7, 7))
         self.info_value3 = ttk.Label(self.info_section, text="", font=("TkDefaultFont", 11))
 
