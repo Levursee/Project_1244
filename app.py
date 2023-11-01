@@ -64,8 +64,8 @@ class App(tk.Tk):
             self.files[1].Setfilter(filter_option)
             dphi = Compute_Phase(self.files[0], self.files[1])
             file = np.array([i.data for i in self.files])
-            self.graph1.draw_graph(np.array(file)[0, :, 100000:200000])
-            self.graph1_2.draw_graph(np.array(file)[1, :, 100000:200000])
+            self.graph1.draw_graph(np.array(file)[0, :, 10000:20000])
+            self.graph1_2.draw_graph(np.array(file)[1, :, 10000:20000])
             sp = self.files[0].Spectrum1.shape[1]
             self.graph2.draw_graph(np.vstack((np.absolute(self.files[0].Spectrum1), np.absolute(self.files[0].Spectrum1)))[:, :sp])
             self.graph3.draw_graph((self.files[0].Phase-self.files[1].Phase))
@@ -79,10 +79,10 @@ class App(tk.Tk):
         '''
         Функция для сохранения значений в формате txt
         '''
-        np.savetxt("spectrum1.txt", self.files[0].Spectrum1.T, delimiter=",", header="Значение спектра референтного сигнала\n\n", encoding="utf-8")
-        np.savetxt("phase1.txt", self.files[0].Phase.T, delimiter=",", header="Значение фазы референтного сигнала\n\n", encoding="utf-8")
-        np.savetxt("spectrum2.txt", self.files[1].Spectrum1.T, delimiter=",", header="Значение спектра объектного сигнала\n\n", encoding="utf-8")
-        np.savetxt("phase2.txt", self.files[1].Phase.T, delimiter=",", header="Значение фазы объектного сигнала\n\n", encoding="utf-8")
+        np.savetxt("spectrum1.txt", self.files[0].Spectrum1.T, delimiter=",", header="Значение спектра опорного сигнала референтных измерений\n\n", encoding="utf-8")
+        np.savetxt("phase1.txt", self.files[0].Phase.T, delimiter=",", header="Значение фазы опорного сигнала референтных измерений\n\n", encoding="utf-8")
+        np.savetxt("spectrum2.txt", self.files[1].Spectrum1.T, delimiter=",", header="Значение спектра объектного сигнала референтных измерений\n\n", encoding="utf-8")
+        np.savetxt("phase2.txt", self.files[1].Phase.T, delimiter=",", header="Значение фазы объектного сигнала референтных измерений \n\n", encoding="utf-8")
 
     def drawfront(self):
         '''
